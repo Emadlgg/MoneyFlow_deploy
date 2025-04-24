@@ -8,9 +8,9 @@
 
 ### 🔧 Instalación
 ```bash
-git clone https://github.com/tu-org/moneyflow-deploy.git
-git clone https://github.com/tu-org/moneyflow-backend.git ../moneyflow-backend
-git clone https://github.com/tu-org/moneyflow-frontend.git ../moneyflow-frontend
+git clone https://github.com/Emadlgg/MoneyFlow_deploy.git
+git clone https://github.com/Emadlgg/MoneyFlow_Backend.git ../moneyflow-backend
+git clone https://github.com/Emadlgg/MoneyFlow_Frontend.git ../moneyflow-frontend
 docker-compose up --build
 ```
 

@@ -8,8 +8,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Checkout Subrepos
         run: |
-          git clone https://github.com/Emadlgg/moneyflow-backend ../moneyflow-backend
-          git clone https://github.com/Emadlgg/moneyflow-frontend ../moneyflow-frontend
+          git clone https://github.com/Emadlgg/MoneyFlow_Backend.git ../moneyflow-backend
+          git clone https://github.com/Emadlgg/MoneyFlow_Frontend.git ../moneyflow-frontend
       - name: Start Services
         run: docker-compose up --build -d
       - name: Run Backend Tests

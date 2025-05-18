@@ -1,46 +1,22 @@
+# MoneyFlow_deploy/docker-compose.yml
 services:
   backend:
     build:
       context: ../MoneyFlow_Backend
       dockerfile: Dockerfile
-    ports: ["3000:3000"]
-    environment:
-      - FRONTEND_URL=http://localhost:3001
-      - PORT=3000
-      - DB_HOST=db
-      - DB_USER=postgres
-      - DB_PASSWORD=1234
-      - DB_NAME=moneyflow
-      - JWT_SECRET=tu_clave_secreta
-    depends_on:
-      db:
-        condition: service_healthy
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env
+    depends_on: []
 
   frontend:
     build:
       context: ../MoneyFlow_Frontend
       dockerfile: Dockerfile
-    ports: ["3001:3000"]
-    environment:
-      - VITE_API_URL=http://localhost:3000/api
-      - VITE_FRONTEND_URL=http://localhost:3001
+    ports:
+      - '3001:3000'
+    env_file:
+      - ../MoneyFlow_Frontend/.env
     depends_on:
-      backend:
-        condition: service_started
-
-  db:
-    image: postgres:13
-    environment:
-      - POSTGRES_PASSWORD=1234
-      - POSTGRES_DB=moneyflow
-      - POSTGRES_USER=postgres
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres -d moneyflow"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
-
-volumes:
-  postgres_data:
+      - backend

@@ -64,11 +64,13 @@ jobs:
       - name: Deploy Backend to Staging
         working-directory: ./MoneyFlow_Backend
         run: |
-          vercel deploy --token=${{ secrets.VERCEL_TOKEN }} > deployment-url.txt
+          vercel deploy \
+            --token=${{ secrets.VERCEL_TOKEN }} \
+            --scope=team_tdOu3lJlZZ4QT9B3zURfFxh \
+            --yes \
+            > deployment-url.txt
           cat deployment-url.txt
         env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_BACKEND }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
@@ -78,11 +80,12 @@ jobs:
       - name: Deploy Frontend to Staging
         working-directory: ./MoneyFlow_Frontend
         run: |
-          vercel deploy --token=${{ secrets.VERCEL_TOKEN }} > deployment-url.txt
+          vercel deploy \
+            --token=${{ secrets.VERCEL_TOKEN }} \
+            --scope=team_tdOu3lJlZZ4QT9B3zURfFxh \
+            --yes \
+            > deployment-url.txt
           cat deployment-url.txt
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_FRONTEND }}
 
   # ==================== DEPLOY PRODUCTION ====================
   deploy-production:
@@ -109,11 +112,14 @@ jobs:
       - name: Deploy Backend to Production
         working-directory: ./MoneyFlow_Backend
         run: |
-          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} > deployment-url.txt
+          vercel deploy \
+            --prod \
+            --token=${{ secrets.VERCEL_TOKEN }} \
+            --scope=team_tdOu3lJlZZ4QT9B3zURfFxh \
+            --yes \
+            > deployment-url.txt
           cat deployment-url.txt
         env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_BACKEND }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
@@ -123,8 +129,10 @@ jobs:
       - name: Deploy Frontend to Production
         working-directory: ./MoneyFlow_Frontend
         run: |
-          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} > deployment-url.txt
+          vercel deploy \
+            --prod \
+            --token=${{ secrets.VERCEL_TOKEN }} \
+            --scope=team_tdOu3lJlZZ4QT9B3zURfFxh \
+            --yes \
+            > deployment-url.txt
           cat deployment-url.txt
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_FRONTEND }}

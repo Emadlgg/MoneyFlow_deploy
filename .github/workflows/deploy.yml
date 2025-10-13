@@ -67,6 +67,7 @@ jobs:
           vercel deploy \
             --token=${{ secrets.VERCEL_TOKEN }} \
             --scope=emadlgs-projects \
+            --name=moneyflow-backend \
             --yes \
             > deployment-url.txt
           cat deployment-url.txt
@@ -83,6 +84,7 @@ jobs:
           vercel deploy \
             --token=${{ secrets.VERCEL_TOKEN }} \
             --scope=emadlgs-projects \
+            --name=moneyflow-frontend \
             --yes \
             > deployment-url.txt
           cat deployment-url.txt
@@ -116,6 +118,7 @@ jobs:
             --prod \
             --token=${{ secrets.VERCEL_TOKEN }} \
             --scope=emadlgs-projects \
+            --name=moneyflow-backend \
             --yes \
             > deployment-url.txt
           cat deployment-url.txt
@@ -133,6 +136,7 @@ jobs:
             --prod \
             --token=${{ secrets.VERCEL_TOKEN }} \
             --scope=emadlgs-projects \
+            --name=moneyflow-frontend \
             --yes \
             > deployment-url.txt
           cat deployment-url.txt

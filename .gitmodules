@@ -1,0 +1,6 @@
+[submodule "MoneyFlow_Backend"]
+	path = MoneyFlow_Backend
+	url = https://github.com/Emadlgg/MoneyFlow_Backend.git
+[submodule "MoneyFlow_Frontend"]
+	path = MoneyFlow_Frontend
+	url = https://github.com/Emadlgg/MoneyFlow_Frontend.git

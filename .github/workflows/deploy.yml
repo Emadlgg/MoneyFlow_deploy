@@ -66,7 +66,7 @@ jobs:
         run: |
           vercel deploy \
             --token=${{ secrets.VERCEL_TOKEN }} \
-            --scope=team_tdOu3lJlZZ4QT9B3zURfFxh \
+            --scope=emadlgs-projects \
             --yes \
             > deployment-url.txt
           cat deployment-url.txt
@@ -82,7 +82,7 @@ jobs:
         run: |
           vercel deploy \
             --token=${{ secrets.VERCEL_TOKEN }} \
-            --scope=team_tdOu3lJlZZ4QT9B3zURfFxh \
+            --scope=emadlgs-projects \
             --yes \
             > deployment-url.txt
           cat deployment-url.txt
@@ -115,7 +115,7 @@ jobs:
           vercel deploy \
             --prod \
             --token=${{ secrets.VERCEL_TOKEN }} \
-            --scope=team_tdOu3lJlZZ4QT9B3zURfFxh \
+            --scope=emadlgs-projects \
             --yes \
             > deployment-url.txt
           cat deployment-url.txt
@@ -132,7 +132,7 @@ jobs:
           vercel deploy \
             --prod \
             --token=${{ secrets.VERCEL_TOKEN }} \
-            --scope=team_tdOu3lJlZZ4QT9B3zURfFxh \
+            --scope=emadlgs-projects \
             --yes \
             > deployment-url.txt
           cat deployment-url.txt
